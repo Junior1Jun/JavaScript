@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지(Mobile)</title>
+    <script>
+       /* 호이스팅 기술 : 함수 호출문이 함수 정의문보다 먼저 나와도, 함수 정의문을 끌어올려 함수를 호출하는 기술 */
+       var count = 0;
+       
+       myFnc();
+
+       function myFnc(){
+        count++;
+        document.write("hello" + count + "<br>");
+       }
+
+       myFnc();
+
+    </script>
+</head>
+
+<body>
+   
+</body>
+</html>
