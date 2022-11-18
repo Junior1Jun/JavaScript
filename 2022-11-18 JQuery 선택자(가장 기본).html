@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+        // document가 준비된 후, 이 function이 실행됨.
+        $(function(){
+            $("#title").css("color","red");
+            $("#title").css("border","5px dashed blue");
+        });
+
+        // id가 title인 태그(또는 요소)에 대한 스타일을 지정
+        // css.("color","red")는 글자 색을 빨강으로 지정
+        // css.("border","5px dashed blue")는 요소의 테두리를 5px 굵기에 점선 파랑색으로 지정 
+    </script>
+</head>
+<body>
+    <h1 id = 'title'>제목</h1>
+</body>
+</html>
