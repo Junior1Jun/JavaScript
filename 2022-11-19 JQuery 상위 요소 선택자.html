@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+        // document가 준비된 후, 이 function이 실행됨.
+        $(function(){
+            $(".txt1").parents().css("border","2px dashed #00f");
+            // class명이 txt1인 요소의 모든 상위 요소에 대해서 css를 적용함. 
+
+            $(".txt2").parents('div').css("border","5px solid #f00");
+            // class명이 txt2인 요소의, 'div'요소인 모든 상위 요소에 대해서 css를 적용함. 
+        });
+
+        
+    </script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1 class = 'title'>선택자</h1>
+    <section>
+        <div>
+            <p class = 'txt1'>내용1</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p class = 'txt2'>내용2</p>
+        </div>
+    </section>
+</body>
+</html>
