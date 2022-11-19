@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+        // document가 준비된 후, 이 function이 실행됨.
+        $(function(){
+            $("#menu1 li:nth-child(1)").css({"background":"#0f0"});
+            // menu1의 li 중, 첫 번째 li를 선택
+
+            $("#menu1 li:nth-child(2n)").css({"background":"#f00"});
+            // menu1의 li 중, 첫 번째 2n(짝수)를 선택
+
+            $("#menu1 li:nth-last-child(2)").css({"background":"#00f"});
+            // menu1의 li 중, 두 번째 마지막 li를 선택
+        });
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <ul id = 'menu1'>
+        <li>내용 1-1</li>
+        <li>내용 1-2</li>
+        <li>내용 1-3</li>
+        <li>내용 1-4</li>
+    </ul>
+</body>
+</html>
