@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            var arr1 = ['서울','대전','부산','전주']
+
+            var arr2 = ['한국','미국','일본','중국']
+
+            var obj = {"name":"정부장", "area":"서울"}
+
+            var idxNum = $.inArray("부산",arr1);
+            // 리스트 arr1에서 '부산'이라는 원소에 대응되는 인덱스 반환
+
+
+            document.write(idxNum,"<br>");
+
+            var okArray1 = $.isArray(arr1);
+            // arr1은 배열 객체이므로 true 반환
+
+
+            var okArray2 = $.isArray(obj);
+            // arr2은 배열 객체가 아니라 딕셔너리이므로 false 반환
+
+
+            document.write(okArray1,"<br>");
+            document.write(okArray2,"<br>");
+        });
+    </script>
+</head>
+<body>  
+   
+</body>
+</html>
