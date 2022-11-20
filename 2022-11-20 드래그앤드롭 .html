@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        .fileDrop{width: 700px;height: 75px;border: 1px solid #000; overflow:scroll;}
+
+    </style>
+
+    <script>
+        
+    $(function(){
+
+    $("#fileDrop").on("dragover", function(e){
+            e.preventDefault();
+            $(this).css("background-color", "#FFD8D8");
+        });
+    // id가 "fileDrop"인 div박스에 어떤 파일을 드래그해서 특정 영역에 있을 경우 배경색을 바꾼다. 
+
+
+    $("#fileDrop").on("dragleave", function(e){
+            e.preventDefault();
+            $(this).css("background-color", "#FFF");
+        });
+    // id가 "fileDrop"인 div박스에 있던 드래그 요소가 벗어날 경우 배경색을 바꾼다. 
+
+
+    $("#fileDrop").on("drop", function(e){
+    // id가 "fileDrop"인 div박스에 있던 드래그 요소가 드롭 될 경우. 
+    
+            e.preventDefault();
+            $(this).css("background-color", "#FFF");
+            var files = e.originalEvent.dataTransfer.files;
+            /*
+            e : 발생한 이벤트를 JQuery가 반환
+            originalEvent : 자바스크립트에서의 원래 이벤트를 가져옴.
+            dataTransfer : 이벤트와 같이 전달된 데이터
+            files : "dataTransfer" 안에 포함된 파일 데이터를 찾아내기 위해 files를 사용함.
+            >> 최종 결과는 FileList객체로 반환함. 
+            */
+            if(files != null && files !=undefined){
+                var tag = "";
+                for(i = 0; files.length; i++){
+                    var f = files[i];
+                    
+                    var fileName = f.name;
+                    var fileSize = f.size / 1024 / 1024 ;
+                    tag += "<div class ='fileList'>" + 
+                           "<span class = 'fileName'>" +fileName + "</span>" +
+                           "<span class = 'fileSize'>" +fileSize + " MB</span>" +
+                           "<span class = 'clear'></span>" + 
+                           "</div>";
+                    $(this).append(tag);
+                }
+
+            }
+        });
+
+    });
+    </script>
+</head>
+<body>  
+   <div id = 'fileDrop' class = 'fileDrop'>
+    
+   </div>
+</body>
+</html>
